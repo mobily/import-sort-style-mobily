@@ -1,0 +1,10 @@
+{
+  "name": "import-sort-style-mobily",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "@mobily",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mobily/import-sort-style-mobily.git"
+  }
+}
