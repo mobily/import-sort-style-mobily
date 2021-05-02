@@ -252,6 +252,29 @@ const fn = (styleApi, _, { alias: aliases = [], overrideBuiltinModules = true } 
 
     { separator: true },
 
+    // import * as Foo from "{alias}/bar";
+    {
+      match: and(
+        hasOnlyNamespaceMember,
+        isAbsoluteModule,
+        member(startsWithUpperCase),
+        isAliasModule,
+      ),
+      sort: member(unicode),
+    },
+    // import * as foo from "{alias}/bar";
+    {
+      match: and(
+        hasOnlyNamespaceMember,
+        isAbsoluteModule,
+        member(startsWithLowerCase),
+        isAliasModule,
+      ),
+      sort: member(unicode),
+    },
+
+    { separator: true },
+
     // import "{alias}/foo"
     {
       match: and(isAbsoluteModule, isAliasModule),
